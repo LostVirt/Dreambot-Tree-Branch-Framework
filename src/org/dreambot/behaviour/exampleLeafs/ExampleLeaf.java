@@ -10,12 +10,12 @@ import org.dreambot.framework.Leaf;
 public class ExampleLeaf extends Leaf<Main> {
 
     @Override
-    public boolean isValid(Main context) {
+    public boolean isValid() {
         return BankLocation.GRAND_EXCHANGE.getArea(10).contains(Players.localPlayer());
     }
 
     @Override
-    public int onLoop(Main context) {
+    public int onLoop() {
         MethodProvider.log("In Grand Exchange!");
         return (int) Calculations.nextGaussianRandom(350, 250);
     }

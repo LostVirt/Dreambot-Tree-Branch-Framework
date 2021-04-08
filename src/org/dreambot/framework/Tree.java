@@ -26,7 +26,7 @@ public class Tree<T extends AbstractScript> {
         return root.children.stream().map(tLeaf -> tLeaf.getClass().getSimpleName()).collect(Collectors.toList());
     }
 
-    public int onLoop(T context) {
-        return root.onLoop(context);
+    public int onLoop() {
+        return root.onLoop();
     }
 }

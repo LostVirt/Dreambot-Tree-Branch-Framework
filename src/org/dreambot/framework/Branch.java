@@ -25,13 +25,13 @@ public abstract class Branch<T extends AbstractScript> extends Leaf<T> {
 
 
     @Override
-    public int onLoop(T context) {
+    public int onLoop() {
         return children.stream()
-                .filter(c -> Objects.nonNull(c) && c.isValid(context))
+                .filter(c -> Objects.nonNull(c) && c.isValid())
                 .findAny()
                 .map(tLeaf -> {
                     API.currentNode = tLeaf.getClass().getSimpleName();
-                    return tLeaf.onLoop(context);
+                    return tLeaf.onLoop();
                 }).orElse((int) Calculations.nextGaussianRandom(350, 250));
 
     }

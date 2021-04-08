@@ -9,12 +9,12 @@ import org.dreambot.framework.Leaf;
 public class ExampleLeafTwo extends Leaf<Main> {
 
     @Override
-    public boolean isValid(Main context) {
+    public boolean isValid() {
         return true;
     }
 
     @Override
-    public int onLoop(Main context) {
+    public int onLoop() {
         if (Walking.shouldWalk(6)) {
             Walking.walk(BankLocation.GRAND_EXCHANGE.getCenter());
         }
