@@ -30,7 +30,8 @@ public abstract class Branch<T extends AbstractScript> extends Leaf<T> {
                 .filter(c -> Objects.nonNull(c) && c.isValid())
                 .findAny()
                 .map(tLeaf -> {
-                    API.currentNode = tLeaf.getClass().getSimpleName();
+                    API.currentBranch = this.getClass().getSimpleName();
+                    API.currentLeaf = tLeaf.getClass().getSimpleName();
                     return tLeaf.onLoop();
                 }).orElse((int) Calculations.nextGaussianRandom(350, 250));
 
