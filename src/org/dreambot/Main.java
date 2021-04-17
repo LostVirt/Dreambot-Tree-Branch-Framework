@@ -84,7 +84,8 @@ public class Main extends AbstractScript implements PaintInfo {
     public String[] getPaintInfo() {
         return new String[] {
                 getManifest().name() + " V" + getManifest().version(),
-                "Current Leaf: " + API.currentNode
+                "Current Branch: " + API.currentBranch,
+                "Current Leaf: " + API.currentLeaf
         };
     }
 
